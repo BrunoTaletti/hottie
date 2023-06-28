@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  padding: 0;
+}
+
+li,
+ul {
+  list-style-type: none;
+}
+
+.container {
+  width: 100%;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-black {
+  background-color: #413e3b;
+}
+
+.bg-red {
+  background-color: #ff2e00;
+}
+
+.bg-blue {
+  background-color: #6883ba;
+}
+
+.bg-green {
+  background-color: #b0db43;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-black {
+  color: #413e3b;
+}
+
+.text-red {
+  color: #ff2e00;
+}
+
+.text-blue {
+  color: #6883ba;
+}
+
+.text-green {
+  color: #b0db43;
+}
+
+.text-title {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-25 {
+  font-size: 25px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.padding-1 {
+  padding: 1%;
+}
+
+.padding-2 {
+  padding: 2%;
+}
+
+.margin-1 {
+  margin: 1%;
+}
+
+.margin-2 {
+  margin: 2%;
+}
+
+.margin-top-1 {
+  margin: 1% 0;
+}
+
+.margin-top-2 {
+  margin: 2% 0;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.m-sides-1 {
+  margin: 0 1%;
+}
+
+.m-sides-auto {
+  margin: 0 auto;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.logo {
+  rotate: 20deg;
+}
+
+.box {
+  border-radius: 60px;
+}
+
+.table {
+  width: 100% !important;
+}
+
+.shadow {
+  box-shadow: 0 1px 50px #00000059;
+}
+
+.form input,
+select,
+option {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 35px;
+  border: none;
+  box-shadow: 0 0 2px #413e3b;
+  padding: 2% 1%;
+  margin: 1% 0;
+}
+
+.btn {
+  border: none;
+  color: #ffffff;
+  padding: 2% 1%;
+  margin: 2% 0;
+  border-radius: 35px;
+  font-weight: bold;
+}
+
+.btn-circle {
+  border-radius: 50px;
+  padding: 0.5%;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-link {
+  text-decoration: none;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  cursor: pointer;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}

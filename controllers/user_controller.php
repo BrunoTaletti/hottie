@@ -42,19 +42,19 @@ if (isset($_GET['logout'])) {
 if (isset($_GET['add-sale'])) {
 
     // Verifica se os campos desejados não estão vazios
-    if (!empty($_POST['value']) || !empty($_POST['service']) || !empty($_POST['payment_voucher']) || !empty($_POST['sale_date'])) {
+    if (!empty($_POST['value']) || !empty($_POST['service']) || !empty($_POST['payment_voucher'])) {
 
         // Resgata o ID do usuário
         $seller_id = $user_id;
 
         // Resgata os dados preenchidos no formulário
+        $sale_payment_voucher = $_POST['payment_voucher'];
         $sale_value = $_POST['value'];
         $sale_service = $_POST['service'];
-        $sale_payment_voucher = $_POST['payment_voucher'];
-        $sale_date = $_POST['sale_date'];
+        $observation = $_POST['observation'];
 
         // Insere os dados na tabela de vendas
-        $add_sale_query = "INSERT INTO sales (seller_id, value, service, payment_voucher, sale_date, created_at) VALUES ('$seller_id', '$sale_value', '$sale_service', '$sale_payment_voucher', '$sale_date', NOW())";
+        $add_sale_query = "INSERT INTO sales (seller_id, status, value, service, payment_voucher, observation, created_at) VALUES ('$seller_id', 3, '$sale_value', '$sale_service', '$sale_payment_voucher', '$observation', NOW())";
         $add_sale = mysqli_query($db_connection, $add_sale_query);
 
         // Redireciona o usuário para a aplicação
@@ -77,3 +77,23 @@ $occupation = $user_data['occupation'];
 // Procura todas as vendas que possuem o mesmo ID do usuario
 $get_sales = "SELECT * FROM sales WHERE seller_id = '$user_id'";
 $get_sales_data = mysqli_query($db_connection, $get_sales);
+
+// CRUD - Read: Comissões do Usuário
+
+// Aprovadas
+// Procura todas as vendas que possuem o mesmo ID do usuario e status aprovado
+$get_approved_comissions = "SELECT value FROM sales WHERE seller_id = '$user_id' AND status = 1";
+$user_approved_comissions = mysqli_query($db_connection, $get_approved_comissions);
+
+while ($approved_comissions_value = $user_approved_comissions->fetch_array()) {
+    $total_comission_approved += $approved_comissions_value['value'];
+}
+
+// Pendentes
+// Procura todas as vendas que possuem o mesmo ID do usuario e status pendente
+$get_pending_comissions = "SELECT value FROM sales WHERE seller_id = '$user_id' AND status = 3";
+$user_pending_comissions = mysqli_query($db_connection, $get_pending_comissions);
+
+while ($pending_comissions_value = $user_pending_comissions->fetch_array()) {
+    $total_pending_comission += $pending_comissions_value['value'];
+}

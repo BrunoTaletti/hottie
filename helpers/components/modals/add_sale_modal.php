@@ -6,19 +6,26 @@
             </a>
             <h1 class="title btn-link-blue text-center">Cadastrar Pedido</h1>
             <form action="?add-sale" method="POST" class="form">
-                <label>Valor do pedido (R$):</label>
-                <input type="text" name="value">
+                <label>
+                    <a href="#"><i class="fa-solid fa-circle-question text-blue"></i></a>
+                    Comprovante de Pagamento:
+                </label>
+                <input type="text" name="payment_voucher" placeholder="Ex: https://imgur.com.br/5pKpLa23">
+                <label>Valor total:</label>
+                <input type="number" name="value" placeholder="R$">
                 <label>Serviço:</label>
                 <select name="service">
-                    <option value="foto">Foto</option>
-                    <option value="video">Video</option>
-                    <option value="chamada">Chamada</option>
+                    <option selected disabled>Selecionar</option>
+                    <option value="1">Video Explicito</option>
+                    <option value="2">Chamada de Video</option>
+                    <option value="3">Programa</option>
                 </select>
-                <label>Data da venda:</label>
-                <input type="date" name="sale_date">
-                <label>Comprovante (URL):</label>
-                <input type="text" name="payment_voucher">
-                <button type="submit" class="btn btn-block bg-red">Cadastrar</button>
+                <label>
+                    <a href="#"><i class="fa-solid fa-circle-question text-blue"></i></a>
+                    Observação:
+                </label>
+                <input type="text" name="observation">
+                <button type="submit" class="btn btn-block bg-blue">Cadastrar</button>
             </form>
         </div>
     </div>

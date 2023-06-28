@@ -14,6 +14,7 @@ ul {
 }
 
 .container {
+  word-wrap: break-word;
   width: 100%;
 }
 
@@ -233,4 +234,8 @@ option {
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+
+.pointer {
+  cursor: pointer;
 }

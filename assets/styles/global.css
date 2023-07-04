@@ -135,6 +135,10 @@ ul {
   display: none;
 }
 
+.b-s-box {
+  box-sizing: border-box;
+}
+
 .center {
   justify-content: center;
   align-items: center;
